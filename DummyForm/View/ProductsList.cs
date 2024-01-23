@@ -21,15 +21,20 @@ namespace DummyForm.View
             productsListController = new ProductsListController();
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {           
-            //dataGridView1.DataSource = productsListController.getProducts();
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            productsListController.getProducts(dataProductsList);
         }
 
         private void ConsultaExample_Click(object sender, EventArgs e)
         {
-            productsListController.getProducts();
+            productsListController.getProducts(dataProductsList);
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,7 +22,6 @@ namespace DummyForm
                 this.Hide();
                 ProductsList products = new ProductsList();
                 products.Show();
-                MessageBox.Show("Texto ingresado: " + userName + password);
             }
             else
             {
