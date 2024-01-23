@@ -34,7 +34,8 @@ namespace DummyForm.View
 
         private void addButton_Click(object sender, EventArgs e)
         {
-
+            AddProduct addWindow = new AddProduct();
+            addWindow.Show();
         }
     }
 }

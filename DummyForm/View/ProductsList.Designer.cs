@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             dataProductsList = new DataGridView();
+            refreshButton = new Button();
+            TitleProductsLabel = new Label();
+            addButton = new Button();
+            editButton = new Button();
             id = new DataGridViewTextBoxColumn();
-            Images = new DataGridViewTextBoxColumn();
             title = new DataGridViewTextBoxColumn();
             description = new DataGridViewTextBoxColumn();
             price = new DataGridViewTextBoxColumn();
@@ -40,76 +43,18 @@
             brand = new DataGridViewTextBoxColumn();
             category = new DataGridViewTextBoxColumn();
             thumbnail = new DataGridViewTextBoxColumn();
-            refreshButton = new Button();
-            TitleProductsLabel = new Label();
-            addButton = new Button();
-            editButton = new Button();
+            Images = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataProductsList).BeginInit();
             SuspendLayout();
             // 
             // dataProductsList
             // 
             dataProductsList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataProductsList.Columns.AddRange(new DataGridViewColumn[] { id, Images, title, description, price, discountPercentage, rating, stock, brand, category, thumbnail });
+            dataProductsList.Columns.AddRange(new DataGridViewColumn[] { id, title, description, price, discountPercentage, rating, stock, brand, category, thumbnail, Images });
             dataProductsList.Location = new Point(38, 82);
             dataProductsList.Name = "dataProductsList";
             dataProductsList.Size = new Size(725, 296);
             dataProductsList.TabIndex = 3;
-            // 
-            // id
-            // 
-            id.HeaderText = "Id";
-            id.Name = "id";
-            // 
-            // Images
-            // 
-            Images.HeaderText = "Links de imagenes";
-            Images.Name = "Images";
-            // 
-            // title
-            // 
-            title.HeaderText = "Título";
-            title.Name = "title";
-            // 
-            // description
-            // 
-            description.HeaderText = "Descripción";
-            description.Name = "description";
-            // 
-            // price
-            // 
-            price.HeaderText = "Precio";
-            price.Name = "price";
-            // 
-            // discountPercentage
-            // 
-            discountPercentage.HeaderText = "Descuento";
-            discountPercentage.Name = "discountPercentage";
-            // 
-            // rating
-            // 
-            rating.HeaderText = "Calificación";
-            rating.Name = "rating";
-            // 
-            // stock
-            // 
-            stock.HeaderText = "Cantidad disponible";
-            stock.Name = "stock";
-            // 
-            // brand
-            // 
-            brand.HeaderText = "Marca";
-            brand.Name = "brand";
-            // 
-            // category
-            // 
-            category.HeaderText = "Categoría";
-            category.Name = "category";
-            // 
-            // thumbnail
-            // 
-            thumbnail.HeaderText = "Thumbnail";
-            thumbnail.Name = "thumbnail";
             // 
             // refreshButton
             // 
@@ -157,6 +102,61 @@
             editButton.Text = "Editar";
             editButton.UseVisualStyleBackColor = false;
             // 
+            // id
+            // 
+            id.HeaderText = "Id";
+            id.Name = "id";
+            // 
+            // title
+            // 
+            title.HeaderText = "Título";
+            title.Name = "title";
+            // 
+            // description
+            // 
+            description.HeaderText = "Descripción";
+            description.Name = "description";
+            // 
+            // price
+            // 
+            price.HeaderText = "Precio";
+            price.Name = "price";
+            // 
+            // discountPercentage
+            // 
+            discountPercentage.HeaderText = "Descuento";
+            discountPercentage.Name = "discountPercentage";
+            // 
+            // rating
+            // 
+            rating.HeaderText = "Calificación";
+            rating.Name = "rating";
+            // 
+            // stock
+            // 
+            stock.HeaderText = "Cantidad disponible";
+            stock.Name = "stock";
+            // 
+            // brand
+            // 
+            brand.HeaderText = "Marca";
+            brand.Name = "brand";
+            // 
+            // category
+            // 
+            category.HeaderText = "Categoría";
+            category.Name = "category";
+            // 
+            // thumbnail
+            // 
+            thumbnail.HeaderText = "Thumbnail";
+            thumbnail.Name = "thumbnail";
+            // 
+            // Images
+            // 
+            Images.HeaderText = "Links de imagenes";
+            Images.Name = "Images";
+            // 
             // ProductsList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -179,8 +179,9 @@
         private DataGridView dataProductsList;
         private Button refreshButton;
         private Label TitleProductsLabel;
+        private Button addButton;
+        private Button editButton;
         private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn Images;
         private DataGridViewTextBoxColumn title;
         private DataGridViewTextBoxColumn description;
         private DataGridViewTextBoxColumn price;
@@ -190,7 +191,6 @@
         private DataGridViewTextBoxColumn brand;
         private DataGridViewTextBoxColumn category;
         private DataGridViewTextBoxColumn thumbnail;
-        private Button addButton;
-        private Button editButton;
+        private DataGridViewTextBoxColumn Images;
     }
 }

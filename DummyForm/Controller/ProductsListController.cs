@@ -19,7 +19,9 @@ namespace DummyForm.Controller
             productsList.Rows.Clear();
             foreach (Product product in products)
             {
-                productsList.Rows.Add(product.Id, product.Title, product.Price);
+                productsList.Rows.Add(product.Id, product.Title, product.Description,
+                    product.Price, product.DiscountPercentage, product.Rating, product.Stock,
+                    product.Brand, product.Category, product.Thumbnail);
             }
            
         }
@@ -65,7 +67,37 @@ namespace DummyForm.Controller
 
                     if (response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("Producto agregado exitosamente.");
+                        MessageBox.Show(newProduct.Title + "agregado exitosamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error en la solicitud. Código de estado: {response.StatusCode}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al realizar la solicitud: {ex.Message}");
+                }
+            }
+        }
+        public async Task UpdateProduct(Product updatedProduct, int id)
+        {
+            string apiUrl = "https://dummyjson.com/products/" + id;
+
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                try
+                {
+                    string jsonProduct = JsonConvert.SerializeObject(updatedProduct);
+
+                    StringContent content = new StringContent(jsonProduct, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await httpClient.PutAsync(apiUrl, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Producto actualizado exitosamente.");
                     }
                     else
                     {
